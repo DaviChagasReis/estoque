@@ -30,27 +30,27 @@ $dados = $sql->fetchALL();
 
 
 
-        <a href=" <?php echo $url ?> novo-produto.php" class="botao-menu">  
+        <a href=" <?php echo $url ?>novo-produto.php" class="botao-menu">  
             <img class="icone" src="./imagens/mais.png"/>
             <div class="botao-menu"></div>
         </a>
 
 
 
-        <a href=" <?php echo $url ?> busca.php" class="botao-menu" > 
+        <a href=" <?php echo $url ?>busca.php" class="botao-menu" > 
         <img class="icone" src="./imagens/pesquisa.png" alt=""/>
             <div class="botao-menu" ></div>
         </a>
 
 
 
-        <a href=" <?php echo $url ?> registros.php" class="botao-menu" >
+        <a href=" <?php echo $url ?>registros.php" class="botao-menu" >
             <img class="icone" src="./imagens/1333544.png"/>
             <div class="botao-menu"></div>
         </a>
 
 
-        <a href=" <?php echo $url ?> nova-categoria.php" class="botao-menu" >
+        <a href=" <?php echo $url ?>nova-categoria.php" class="botao-menu" >
             <img class="icone" src="./imagens/categoriaa.png"/>
             <div class="botao-menu"></div>
         </a>

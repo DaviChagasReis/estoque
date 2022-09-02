@@ -2,7 +2,7 @@
 require_once "config.php";
 $id = $_GET['id'];
 global $db;
-$sql = "DELETE FROM categorias WHERE id = :id";
+$sql = "DELETE FROM WHERE id = :id";
 $sql = $db->prepare($sql);
 $sql->bindValue(":id", $id);
 $sql->execute();

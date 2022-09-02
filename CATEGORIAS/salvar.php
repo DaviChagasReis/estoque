@@ -1,30 +1,19 @@
 <?php
     require_once "../config.php";
     global $db;
-    $categorias = array();
+    $categoria = $_POST['nome'];
+    $id = $_POST['id'];
 
-    if (isset($_GET['id'])){
-        $id = $_GET['id'];
 
-        $sql = "SELECT * FROM categorias WHERE id = :id";
-        $sql = $db->prepare($sql);
-        $sql->bindValue(":id", $id);
-        $sql->execute();
-    
-    
-        if ($sql->rowCount() > 0) {
-            $categorias = $sql->fetch();
-        }else{
-            header("Location: ../nova-categoria.php");
-            exit;
-        }
-    }else{
-        header("Location: ../nova-categoria.php");
-        exit;
-    }
+    $sql = "UPDATE categorias SET nome = :categoira WHERE id = :id";
+    $sql = $db->prepare($sql);
+    $sql->bindValue(":categoria", $categoria);
+    $sql->bindValue(":id", $id);
+    $sql->execute();
+
+    header("Location: editar.php");
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,8 +46,7 @@
 
 
                             <br/><a href="nova-categoria.php" class="btn btn-warning"> Voltar </a>  
-                            <button type="submit" class="btn btn-success">Salvar</button>
-                            <!-- <br/><a href="nova-categoria.php" class="btn btn-warning"> Excluir </a> -->
+
                     </form>
                 </fieldset>
             </div>
