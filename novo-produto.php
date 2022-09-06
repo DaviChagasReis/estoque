@@ -21,7 +21,18 @@ if (count($_POST) > 0){
         header("Location: index.php");
     }
 }
+$categorias = array();
+
+$sql = "SELECT * FROM categoria";
+$sql = $db->prepare($sql);
+$sql->execute();
+
+ if ($sql->rowCount() > 0) {
+    $categorias = $sql->fetchAll();
+ }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,31 +53,38 @@ if (count($_POST) > 0){
 
 
 
-            <a href="novo-produto.php" class="botao-menu">  
-                <img class="icone" src="./imagens/mais.png"/>
+            <a href="<?php echo $url ?>novo-produto.php" class="botao-menu">  
+                <img class="icone" src="<?php echo $url ?>imagens/mais.png"/>
                 <div class="botao-menu"></div>
             </a>
 
 
 
-            <a href="busca.php" class="botao-menu" > 
-                <img class="icone" src="./imagens/pesquisa.png" alt=""/>
+            <a href="<?php echo $url ?>busca.php" class="botao-menu" > 
+                <img class="icone" src="<?php echo $url ?>imagens/pesquisa.png" alt=""/>
                 <div class="botao-menu" ></div>
             </a>
 
 
 
-            <a href="registros.php" class="botao-menu" >
-                <img class="icone" src="./imagens/1333544.png"/>
+            <a href="<?php echo $url ?>registros.php" class="botao-menu" >
+                <img class="icone" src="<?php echo $url ?>imagens/1333544.png"/>
                 <div class="botao-menu"></div>
             </a>
 
 
 
             <a href=" <?php echo $url ?> nova-categoria.php" class="botao-menu" >
-            <img class="icone" src="./imagens/categoriaa.png"/>
-            <div class="botao-menu"></div>
-        </a>
+                <img class="icone" src="./imagens/categoriaa.png"/>
+                <div class="botao-menu"></div>
+            </a>
+
+
+            <a href="<?php echo $url ?>registros.php" class="botao-menu" >
+                <img class="icone" src="<?php echo $url ?>imagens/voltar.png"/>
+                <div class="botao-menu"></div>
+            </a>
+            
         </div>
 
 
@@ -78,10 +96,17 @@ if (count($_POST) > 0){
                     <legend> Cadastrar Produto </legend>
                     <form method="POST">
                             <label>Nome</label >
-                            <input type="text" class="form-control" name="nome"autofocus/>
+                            <input type="text" class="form-control" name="nome" required autofocus/>
 
                             <label>id categoria</label>
-                            <input type="number" class="form-control" name="id_categoria"/>
+                            <select name="Categoria" class="form-control" >
+                                <option value="1"></option>
+                                <option value="2">teste</option>
+                                <option value="3">teste</option>
+                                <option value="3">teste</option>
+                                <option value="5">teste</option>
+                                <option value="6">teste</option>
+                            </select>
 
                             <label>data de validade</label>
                             <input type="date" class="form-control" name="data_validade"/>

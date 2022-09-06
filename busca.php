@@ -84,6 +84,7 @@ $dados = $sql->fetchALL();
                             </div>
                             <div class="col-sm-6">  
                                 <button type="submit" class="btn btn-primary">Buscar</button>   
+                                <a href="registros.php" class="btn btn-warning"> Voltar </a>  
                             </div>    
                         </div>  
                     </form>

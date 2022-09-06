@@ -56,7 +56,7 @@
                             <input type="hidden" class="form-control" value="<?php echo $categorias['id']?>" name="id"/>
 
 
-                            <br/><a href="nova-categoria.php" class="btn btn-warning"> Voltar </a>  
+                            <br/><a href="../nova-categoria.php" class="btn btn-warning"> Voltar </a>  
                             <button type="submit" class="btn btn-success">Salvar</button>
                             <!-- <br/><a href="nova-categoria.php" class="btn btn-warning"> Excluir </a> -->
                     </form>

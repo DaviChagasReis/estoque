@@ -18,38 +18,43 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="fundo-menu">
+        <div class="fundo-menu">
 
 
 
-        <a href="<?php echo $url ?>novo-produto.php" class="botao-menu">  
-            <img class="icone" src="<?php echo $url ?>imagens/mais.png"/>
-            <div class="botao-menu"></div>
-        </a>
+            <a href="<?php echo $url ?>novo-produto.php" class="botao-menu">  
+                <img class="icone" src="<?php echo $url ?>imagens/mais.png"/>
+                <div class="botao-menu"></div>
+            </a>
 
 
 
-        <a href="<?php echo $url ?>busca.php" class="botao-menu" > 
-            <img class="icone" src="<?php echo $url ?>imagens/pesquisa.png" alt=""/>
-            <div class="botao-menu" ></div>
-        </a>
+            <a href="<?php echo $url ?>busca.php" class="botao-menu" > 
+                <img class="icone" src="<?php echo $url ?>imagens/pesquisa.png" alt=""/>
+                <div class="botao-menu" ></div>
+            </a>
 
 
 
-        <a href="<?php echo $url ?>registros.php" class="botao-menu" >
-            <img class="icone" src="<?php echo $url ?>imagens/1333544.png"/>
-            <div class="botao-menu"></div>
-        </a>
+            <a href="<?php echo $url ?>registros.php" class="botao-menu" >
+                <img class="icone" src="<?php echo $url ?>imagens/1333544.png"/>
+                <div class="botao-menu"></div>
+            </a>
 
 
 
-        <a href="<?php echo $url ?>nova-categoria.php" class="botao-menu" >
-            <img class="icone" src="<?php echo $url ?>imagens/categoriaa.png"/>
-            <div class="botao-menu"></div>
-        </a>
+            <a href="<?php echo $url ?>nova-categoria.php" class="botao-menu" >
+                <img class="icone" src="<?php echo $url ?>imagens/categoriaa.png"/>
+                <div class="botao-menu"></div>
+            </a>
 
 
-        
-    </div>
+
+            <a href="<?php echo $url ?>registros.php" class="botao-menu" >
+                <img class="icone" src="<?php echo $url ?>imagens/voltar.png"/>
+                <div class="botao-menu"></div>
+            </a>
+            
+        </div>   
 </body>
 </html>
