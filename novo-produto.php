@@ -98,14 +98,14 @@ $sql->execute();
                             <label>Nome</label >
                             <input type="text" class="form-control" name="nome" required autofocus/>
 
-                            <label>id categoria</label>
+                            <label>Categoria</label>
                             <select name="Categoria" class="form-control" >
-                                <option value="1"></option>
-                                <option value="2">teste</option>
-                                <option value="3">teste</option>
-                                <option value="3">teste</option>
-                                <option value="5">teste</option>
-                                <option value="6">teste</option>
+                                <option value="" disable selected >Selecione uma Categoria</option>
+                                <?php foreach($categorias as $categoria):?>
+
+                                    <option value="<?php echo $categoria['id'] ?>"><?php echo $categoria['nome']?></option>
+
+                                    <?php endforeach;?>
                             </select>
 
                             <label>data de validade</label>
