@@ -35,36 +35,7 @@ $dados = $sql->fetchALL();
 </head>
 <body>
     <div class="container fundo">
-        <div class="fundo-menu">
-
-
-
-        <a href="novo-produto.php" class="botao-menu">  
-            <img class="icone" src="./imagens/mais.png"/>
-            <div class="botao-menu"></div>
-        </a>
-
-
-
-        <a href="#" class="botao-menu" > 
-        <img class="icone" src="./imagens/pesquisa.png" alt=""/>
-            <div class="botao-menu" ></div>
-        </a>
-
-
-
-        <a href="registros.php" class="botao-menu" >
-            <img class="icone" src="./imagens/1333544.png"/>
-            <div class="botao-menu"></div>
-        </a>
-
-
-
-        <a href=" nova-categoria.php" class="botao-menu" >
-            <img class="icone" src="./imagens/categoriaa.png"/>
-            <div class="botao-menu"></div>
-        </a>
-        </div>
+        <?php require_once "./menu.php";?>
 
 
 

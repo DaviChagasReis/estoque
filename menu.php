@@ -55,6 +55,12 @@
                 <div class="botao-menu"></div>
             </a>
             
+
+
+            <a href="<?php echo $url ?>produtos/listar.php" class="botao-menu" >
+                <img class="icone" src="<?php echo $url ?>imagens/lista.png"/>
+                <div class="botao-menu"></div>
+            </a>
         </div>   
 </body>
 </html>
