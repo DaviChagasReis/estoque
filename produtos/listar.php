@@ -4,7 +4,7 @@ require_once "../config.php";
 $produtos = array();
 
 global $db;
-$sql = "SELECT * FROM produtos";
+$sql = "SELECT * FROM produtos INNER JOIN categoiras ON ";
 $sql = $db->prepare($sql);
 $sql->execute();
 
@@ -15,18 +15,7 @@ if ($sql->rowCount() > 0) {
     // print_r($produtos);
     // exit;
 
-//     if (isset($_POST['nome'])) {
-//         $nome = $_POST['nome'];
 
-//         $sql = "INSERT INTO categorias SET nome = :nome";
-//         $sql = $db->prepare($sql);
-//         $sql->bindValue(":nome", $nome);
-//         $sql->execute();
-
-//         if($sql) {
-//             header("Location: index.php");
-//     }
-// }
 
 ?>
 
@@ -56,9 +45,10 @@ if ($sql->rowCount() > 0) {
                     <h2>Listar produtos</h2>
                     <table class="table table-dark table-striped" >
                     <thrad>
-                        <th> nome </th>
-                        <th> categoria </th>
-                        <th> data de validade</th>
+                        <th> Nome </th>
+                        <th> Categoria </th>
+                        <th> Data de validade</th>
+                        <th> Quantidade</th>
                         <th> Opções</th>
 
                     </thead>
@@ -67,8 +57,9 @@ if ($sql->rowCount() > 0) {
                         <?php foreach($produtos as $produto): ?>
                         <tr>
                             <td><?php echo $produto['nome']?></td>
-                            <td><?php echo $produto['id_categoria']?></td>
+                            <td><?php echo $ ['categorias'] ?></td>
                             <td><?php echo $produto['data_validade']?></td>
+                            <td><?php echo $produto['quantidade']?></td>
 
                             <td><a href="../produtos/editar.php?id=<?php  echo $produto['id']?>" class="btn btn-warning"> Editar </a></td>
                         </tr>

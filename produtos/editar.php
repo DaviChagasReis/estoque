@@ -16,21 +16,27 @@ $produtos = array();
 
 
 
-if (count($_POST) > 0){
+if (isset($_POST['nome'])) {
     $nome = $_POST['nome'];
     $id_categoria = $_POST['id_categoria'];
     $data_validade = $_POST['data_validade'];
+    $quantidade = $_POST['quantidade'];
 
-    $sql = "UPDATE produtos WHERE nome = :nome, id_categoria = :id_categoria, data_validade = :data_validade";
+    $sql = "UPDATE produtos SET nome = :nome, id_categoria = :id_categoria, data_validade = :data_validade, quantidade = :quantidade WHERE id = :id";
     $sql = $db->prepare($sql);
     $sql->bindValue(":nome", $nome);
     $sql->bindValue(":id_categoria", $id_categoria );
     $sql->bindValue(":data_validade", $data_validade);
+    $sql->bindValue(":quantidade", $quantidade);
+    $sql->bindValue(":id", $id);
     $sql->execute();
 
-    // echo "<pre>";
-    // print_r($sql->errorInfo());
-    // exit;
+    header("Location: listar.php");
+
+    //echo "<pre>";                       //correção de bug
+    //var_dump($sql);                     //correção de bug
+    //print_r($sql->errorInfo());         //correção de bug
+    //exit;                               //correção de bug
 
     }
 
@@ -88,6 +94,10 @@ if (count($_POST) > 0){
 
                             <label>Data de validade</label>
                             <input type="text" class="form-control" name="data_validade" value="<?php echo $produtos['data_validade']?>"/>
+
+
+                            <label>Quantidade</label>
+                            <input type="number" class="form-control" name="quantidade" value="<?php echo $produtos['quantidade']?>"/>
 
                             <br/><a href="listar.php" class="btn btn-warning"> Voltar </a>  
                             <button type="submit" class="btn btn-success">Salvar</button>
