@@ -4,7 +4,9 @@ require_once "../config.php";
 $produtos = array();
 
 global $db;
-$sql = "SELECT * FROM produtos INNER JOIN categoiras ON produtos.id_categoria=categorias.id";
+$sql = "SELECT produtos.id, produtos.nome, produtos.data_validade, produtos.quantidade, categorias.nome 
+as nome_categoria FROM produtos INNER JOIN categorias ON produtos.id_categoria = categorias.id";
+
 $sql = $db->prepare($sql);
 $sql->execute();
 
@@ -57,11 +59,13 @@ if ($sql->rowCount() > 0) {
                         <?php foreach($produtos as $produto): ?>
                         <tr>
                             <td><?php echo $produto['nome']?></td>
-                            <td><?php echo $ ['categorias'] ?></td>
+                            <td><?php echo $produto['nome_categoria']?></td>
                             <td><?php echo $produto['data_validade']?></td>
                             <td><?php echo $produto['quantidade']?></td>
 
-                            <td><a href="../produtos/editar.php?id=<?php  echo $produto['id']?>" class="btn btn-warning"> Editar </a></td>
+                            <td>
+                                <a href="./editar.php?id=<?php echo $produto['id']?>" class="btn btn-warning">Editar</a>
+                            </td>
                         </tr>
                             <?php endforeach; ?>
                     </tbody>
