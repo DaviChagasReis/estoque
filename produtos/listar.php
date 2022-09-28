@@ -4,7 +4,7 @@ require_once "../config.php";
 $produtos = array();
 
 global $db;
-$sql = "SELECT * FROM produtos INNER JOIN categoiras ON ";
+$sql = "SELECT * FROM produtos INNER JOIN categoiras ON produtos.id_categoria=categorias.id";
 $sql = $db->prepare($sql);
 $sql->execute();
 
